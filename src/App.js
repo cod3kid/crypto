@@ -24,22 +24,42 @@ function App() {
 
   return (
     <div>
-      <div style={{ display: "flex", justifyContent: "center", padding: 30 }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          paddingTop: 20,
+          paddingLeft: 30,
+          paddingRight: 30,
+        }}
+      >
         <input
           type="text"
           placeholder="First Few Characters"
           value={firstValue}
           onChange={(e) => setFirstValue(e.target.value)}
-          style={{ marginRight: 10 }}
+          style={{ marginRight: 10, padding: 10 }}
         />
         <input
           type="text"
           placeholder="Last Few Characters"
           value={lastValue}
           onChange={(e) => setLastValue(e.target.value)}
-          style={{ marginRight: 10 }}
+          style={{ marginRight: 10, padding: 10 }}
         />
-        <button onClick={fetchCoin}>Search</button>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: 20,
+        }}
+      >
+        <button onClick={fetchCoin} style={{ padding: 5 }}>
+          Search
+        </button>
       </div>
       {listCoins.length ? (
         <table>
