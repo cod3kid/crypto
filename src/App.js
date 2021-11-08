@@ -59,7 +59,7 @@ function App() {
         }}
       >
         <button onClick={fetchCoin} style={{ padding: 5 }}>
-          Search
+          Searchh
         </button>
       </div>
       {listCoins.length ? (
@@ -67,7 +67,7 @@ function App() {
           <tr>
             <th>Symbol</th>
             <th>Coin</th>
-            <th>address</th>
+            <th>Address</th>
           </tr>
           {listCoins.map((item) => {
             return (
