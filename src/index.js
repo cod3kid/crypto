@@ -5,17 +5,6 @@ import App from "./App";
 import axios from "axios";
 import reportWebVitals from "./reportWebVitals";
 
-axios.create({
-  timeout: 10000,
-  headers: {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Allow-Credentials": true,
-  },
-});
-
 ReactDOM.render(
   <React.StrictMode>
     <App />

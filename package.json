@@ -1,5 +1,6 @@
 {
   "homepage": "https://cod3kid.github.io/crypto",
+  "proxy": "https://api1.poocoin.app", 
   "name": "poo-coin-trick",
   "version": "0.1.0",
   "private": true,
