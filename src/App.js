@@ -3,6 +3,8 @@ import axios from "axios";
 import { fourthLastDigit } from "./utils";
 import "./app.css";
 
+axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
+
 function App() {
   const [firstValue, setFirstValue] = useState("");
   const [lastValue, setLastValue] = useState("");
