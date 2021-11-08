@@ -6,7 +6,6 @@ import axios from "axios";
 import reportWebVitals from "./reportWebVitals";
 
 axios.create({
-  baseURL: "https://api1.poocoin.app",
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",

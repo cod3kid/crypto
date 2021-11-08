@@ -11,12 +11,14 @@ function App() {
   const fetchCoin = () => {
     setListCoins([]);
     fourthLastDigit.forEach(async (el) => {
-      await axios.get(`/tokens?search=${el}${lastValue}`).then((res) => {
-        const filteredCoins = res.data.filter((coin) =>
-          coin.address.startsWith(firstValue)
-        );
-        setListCoins((prev) => [...prev, ...filteredCoins]);
-      });
+      await axios
+        .get(`https://api1.poocoin.app/tokens?search=${el}${lastValue}`)
+        .then((res) => {
+          const filteredCoins = res.data.filter((coin) =>
+            coin.address.startsWith(firstValue)
+          );
+          setListCoins((prev) => [...prev, ...filteredCoins]);
+        });
     });
   };
 
@@ -55,7 +57,7 @@ function App() {
         }}
       >
         <button onClick={fetchCoin} style={{ padding: 5 }}>
-          Searchh
+          Search
         </button>
       </div>
       {listCoins.length ? (
