@@ -26,12 +26,11 @@ function App() {
     <div>
       <div
         style={{
-          display: "flex",
+          display: "grid",
+          gridGap: 20,
           justifyContent: "center",
           alignItems: "center",
           paddingTop: 20,
-          paddingLeft: 30,
-          paddingRight: 30,
         }}
       >
         <input
@@ -39,14 +38,14 @@ function App() {
           placeholder="First Few Characters"
           value={firstValue}
           onChange={(e) => setFirstValue(e.target.value)}
-          style={{ marginRight: 10, padding: 10 }}
+          style={{ padding: 10 }}
         />
         <input
           type="text"
           placeholder="Last Few Characters"
           value={lastValue}
           onChange={(e) => setLastValue(e.target.value)}
-          style={{ marginRight: 10, padding: 10 }}
+          style={{ padding: 10 }}
         />
       </div>
       <div
