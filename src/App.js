@@ -3,8 +3,6 @@ import axios from "axios";
 import { fourthLastDigit } from "./utils";
 import "./app.css";
 
-axios.defaults.headers.get["Access-Control-Allow-Origin"] = "*";
-
 function App() {
   const [firstValue, setFirstValue] = useState("");
   const [lastValue, setLastValue] = useState("");
@@ -13,14 +11,12 @@ function App() {
   const fetchCoin = () => {
     setListCoins([]);
     fourthLastDigit.forEach(async (el) => {
-      await axios
-        .get(`https://api1.poocoin.app/tokens?search=${el}${lastValue}`)
-        .then((res) => {
-          const filteredCoins = res.data.filter((coin) =>
-            coin.address.startsWith(firstValue)
-          );
-          setListCoins((prev) => [...prev, ...filteredCoins]);
-        });
+      await axios.get(`/tokens?search=${el}${lastValue}`).then((res) => {
+        const filteredCoins = res.data.filter((coin) =>
+          coin.address.startsWith(firstValue)
+        );
+        setListCoins((prev) => [...prev, ...filteredCoins]);
+      });
     });
   };
 
