@@ -57,7 +57,7 @@ function App() {
         }}
       >
         <button onClick={fetchCoin} style={{ padding: 5 }}>
-          Search
+          Searchh
         </button>
       </div>
       {listCoins.length ? (
