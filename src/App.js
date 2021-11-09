@@ -12,7 +12,10 @@ function App() {
     setListCoins([]);
     fourthLastDigit.forEach(async (el) => {
       const config = {
-        headers: { "Access-Control-Allow-Origin": "*" },
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          Referer: "https://poocoin.app",
+        },
       };
 
       await axios
