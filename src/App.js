@@ -11,8 +11,12 @@ function App() {
   const fetchCoin = () => {
     setListCoins([]);
     fourthLastDigit.forEach(async (el) => {
+      const config = {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      };
+
       await axios
-        .get(`https://api1.poocoin.app/tokens?search=${el}${lastValue}`)
+        .get(`https://api1.poocoin.app/tokens?search=${el}${lastValue}`, config)
         .then((res) => {
           const filteredCoins = res.data.filter((coin) =>
             coin.address.startsWith(firstValue)
